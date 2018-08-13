@@ -5,4 +5,7 @@
   background: #e54847;
   text-align: center;
   font-size: 18px;
-  color: #fff; }
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0; }

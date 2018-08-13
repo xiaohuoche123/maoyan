@@ -7,19 +7,19 @@ import Footbar from './Components/Footbar';
 class App extends Component {
   render() {
     return (
-      <div clasName="App">
+      <div className="App">
 
       	<Navbar/>
 
-      	<section>
+      	<main>
 	        {
 	        	this.props.children
 	        }
-        </section>
+        </main>
 
         <Footbar/>
       </div>
-    );
+    )
   }
 }
 

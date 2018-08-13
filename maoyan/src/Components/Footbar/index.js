@@ -8,19 +8,19 @@ class Footbar extends Component{
 			<ul>
 				<li>
 					<NavLink to="/home" activeClassName="active">
-						<i class="iconfont icon-color"></i>
+						<i className="iconfont icon-color"></i>
 						<p>电影</p>
 					</NavLink>
 				</li>
 				<li>
 					<NavLink to="/cinema" activeClassName="active">
-						<i class="iconfont icon-box"></i>
+						<i className="iconfont icon-box"></i>
 						<p>影院</p>
 					</NavLink>
 				</li>
 				<li>
 					<NavLink to="/my" activeClassName="active">
-						<i class="iconfont icon-account"></i>
+						<i className="iconfont icon-account"></i>
 						<p>我的</p>
 					</NavLink>
 				</li>
