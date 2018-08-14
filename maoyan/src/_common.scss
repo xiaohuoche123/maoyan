@@ -1,0 +1,7 @@
+$navbarHeight:0.52rem;
+$homeNavHeight:0.45rem;
+$homeBlank:13px;
+
+@function pxToRem($px) {
+  @return $px/100px*1rem;
+}

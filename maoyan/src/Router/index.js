@@ -15,27 +15,32 @@ import Detail from '../Components/Detail';
 import Cinema from '../Components/Cinema';
 import My from '../Components/My';
 
+import {Provider} from 'react-redux';
+import store from '../Redux';
+
 const router=(
-	<Router>
-		<App>
-			<Switch>
-				<Route path="/home" render={()=>
-					<Home>
-						<Switch>
-							<Route path="/home/nowplaying" component={Nowplaying}/>
-							<Route path="/home/comingsoon" component={Comingsoon}/>
-							<Redirect from="/home" to="/home/nowplaying"/>
-						</Switch>
-					</Home>
-				}/>
-				<Route path="/search" component={Search}/>
-				<Route path="/cinema" component={Cinema}/>
-				<Route path="/my" component={My}/>
-				<Route path="/detail/:id" component={Detail}/>
-				<Redirect from="*" to="/home"/>
-			</Switch>
-		</App>
-	</Router>
+	<Provider store={store}>
+		<Router>
+			<App>
+				<Switch>
+					<Route path="/home" render={()=>
+						<Home>
+							<Switch>
+								<Route path="/home/nowplaying" component={Nowplaying}/>
+								<Route path="/home/comingsoon" component={Comingsoon}/>
+								<Redirect from="/home" to="/home/nowplaying"/>
+							</Switch>
+						</Home>
+					}/>
+					<Route path="/search" component={Search}/>
+					<Route path="/cinema" component={Cinema}/>
+					<Route path="/my" component={My}/>
+					<Route path="/detail/:id" component={Detail}/>
+					<Redirect from="*" to="/home/nowplaying"/>
+				</Switch>
+			</App>
+		</Router>
+	</Provider>
 )
 
 export default router;
