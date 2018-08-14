@@ -1,8 +1,6 @@
 import React,{Component} from 'react';
 import './index.css';
 import {NavLink} from 'react-router-dom';
-import {connect} from 'react-redux';
-import axios from 'axios';
 
 class Home extends Component{
 	render(){
@@ -15,48 +13,13 @@ class Home extends Component{
 				</div>
 				<div><i className="iconfont icon-search"></i></div>
 			</nav>
-			<section>
-				{
-					this.props.nowList.map(item=>
-						<article key={item.id}>
-							<img src={item.img.replace('w.h','128.180')}/>
-							<aside>
-								<h3>{item.nm}</h3>
-							</aside>
-						</article>
-					)
-				}
-				
-			</section>
-		</div>
-	}
 
-	componentDidMount(){
-		if(this.props.nowList.length===0){
-			this.props.firstRequestData();
-		}
+			{
+	        	this.props.children
+	        }
+
+		</div>
 	}
 }
 
-export default connect(
-	state=>{
-		return {
-			nowList:state.nowReducer
-		}
-	},
-
-	{
-		firstRequestData(){
-			return (dispatch)=>{
-				axios.get("/ajax/movieOnInfoList?token=").then((res)=>{
-					console.log(res.data.movieList);
-
-					dispatch({
-						type:'nowlist',
-						payload:res.data.movieList
-					});
-				});
-			}
-		}
-	}
-)(Home);
+export default Home;
