@@ -1,0 +1,39 @@
+#coming #scroll ul {
+  width: 17rem;
+  height: 1.51rem; }
+  #coming #scroll ul li {
+    float: left;
+    margin-left: 13px;
+    position: relative; }
+    #coming #scroll ul li img {
+      width: 0.85rem;
+      height: 1.15rem; }
+    #coming #scroll ul li div.mask {
+      width: 0.85rem;
+      height: 1.15rem;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.3); }
+    #coming #scroll ul li p {
+      width: 0.85rem;
+      height: 0.18rem;
+      line-height: 0.18rem; }
+    #coming #scroll ul li p.first {
+      font-size: 11px;
+      font-weight: 600;
+      color: #faaf00;
+      position: absolute;
+      z-index: 2;
+      bottom: 0.38rem;
+      left: 0.02rem; }
+    #coming #scroll ul li p.second {
+      font-size: 13px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    #coming #scroll ul li p.third {
+      font-size: 12px;
+      color: #999; }

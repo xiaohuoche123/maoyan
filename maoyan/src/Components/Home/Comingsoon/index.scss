@@ -1,5 +1,58 @@
 @import "../../../common";
 
 #coming{
-	
+	#scroll{
+		//height:pxToRem(216px);
+		//background:yellow;
+		h4{
+			
+		}
+		ul{
+			width:pxToRem(85*20px);
+			height:pxToRem(151px);
+			li{
+				float:left;
+				margin-left:13px;
+				position:relative;
+				img{
+					width:pxToRem(85px);
+					height:pxToRem(115px);
+				}
+				div.mask{
+					width:pxToRem(85px);
+					height:pxToRem(115px);
+					position:absolute;
+					z-index:1;
+					left:0;
+					top:0;
+					background:rgba(0,0,0,0.3);
+				}
+				p{
+					width:pxToRem(85px);
+					height:pxToRem(18px);
+					line-height:pxToRem(18px);
+				}
+				p.first{
+					font-size:11px;
+					font-weight:600;
+					color:#faaf00;
+					position:absolute;
+					z-index:2;
+					bottom:pxToRem(38px);
+					left:pxToRem(2px);
+				}
+				p.second{
+					font-size:13px;
+					font-weight:bold;
+					white-space:nowrap;
+					overflow:hidden;
+					text-overflow:ellipsis;
+				}
+				p.third{
+					font-size:12px;
+					color:#999;
+				}
+			}
+		}
+	}
 }
