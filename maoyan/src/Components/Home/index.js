@@ -14,9 +14,11 @@ class Home extends Component{
 				<div><i className="iconfont icon-search"></i></div>
 			</nav>
 
-			{
-	        	this.props.children
-	        }
+			<section>
+				{
+		        	this.props.children
+		        }
+	        </section>
 
 		</div>
 	}

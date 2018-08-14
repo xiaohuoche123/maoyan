@@ -29,6 +29,12 @@
       color: #e54847;
       font-weight: bold; }
 
+#home section {
+  width: 100%;
+  height: 100%;
+  padding-top: 0.45rem;
+  padding-bottom: 0.52rem; }
+
 #home .homeActive {
   border-bottom: 1px solid blue;
   color: #e54847; }

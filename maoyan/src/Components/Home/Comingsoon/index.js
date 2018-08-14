@@ -6,9 +6,7 @@ import axios from 'axios';
 class Comingsoon extends Component{
 	render(){
 		return <div id="coming">
-			<section>
-				coming
-			</section>
+			coming
 		</div>
 	}
 
