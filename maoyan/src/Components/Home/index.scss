@@ -6,6 +6,7 @@
 		height:$homeNavHeight;
 		line-height:$homeNavHeight;
 		position:fixed;
+		z-index:1;
 		top:$navbarHeight;
 		left:0;
 		border-bottom:1px solid #ccc;
@@ -45,7 +46,7 @@
 	}
 	
 	.homeActive{
-		border-bottom:1px solid blue;
+		border-bottom:1px solid #e54847;
 		color:#e54847;
 	}
 }

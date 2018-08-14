@@ -5,10 +5,12 @@
 		width:100%;
 		height:$navbarHeight;
 		line-height:$navbarHeight;
+		padding-bottom:3px;
 		background:#fff;
 		border-top:1px solid #ccc;
 		position:fixed;
-		bottom:0;
+		z-index:1;
+		bottom:-3px;
 		left:0;
 		display:flex;
 		li{
