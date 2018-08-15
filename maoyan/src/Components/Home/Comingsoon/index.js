@@ -26,7 +26,13 @@ class Comingsoon extends Component{
 			<div id="vertical">
 				{
 					this.props.cominglist.map(item=>
-						<article key={item.id}>
+						<div key={item.id}>
+						{
+							item.comingTitle!==''?
+							<h4>{item.comingTitle}</h4>
+							:null
+						}
+						<article>
 							<img src={item.img.replace('w.h','128.180')} alt=""/>
 							<aside>
 								<h3>{item.nm}
@@ -63,6 +69,7 @@ class Comingsoon extends Component{
 								}
 							</aside>
 						</article>
+						</div>
 					)
 				}
 			</div>
@@ -134,7 +141,7 @@ export default connect(
 			return axios.get("/ajax/comingList?ci=65&token=&limit=10").then(res=>{
 				// console.log("coming",res.data.coming);
 
-				/*
+				
 				//按日期分类显示核心代码
 				//同一个日期的影片只保留第一个的日期
 				//其他的影片日期设置为空(comingTitle属性)
@@ -164,12 +171,12 @@ export default connect(
 					type:'cominglist',
 					payload:list
 				}
-				*/
+				
 
-				return {
-					type:'cominglist',
-					payload:res.data.coming
-				}
+				// return {
+				// 	type:'cominglist',
+				// 	payload:res.data.coming
+				// }
 			});
 		},
 
