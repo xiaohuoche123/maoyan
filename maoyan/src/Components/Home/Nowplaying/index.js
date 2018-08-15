@@ -72,7 +72,7 @@ export default connect(
 		firstRequestData(){
 			return (dispatch)=>{
 				axios.get("/ajax/movieOnInfoList?token=").then((res)=>{
-					console.log(res.data.movieList);
+					// console.log(res.data.movieList);
 
 					dispatch({
 						type:'nowlist',
