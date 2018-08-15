@@ -2,14 +2,21 @@
 
 #coming{
 	#scroll{
-		//height:pxToRem(216px);
-		//background:yellow;
+		height:pxToRem(202px);
+		border-bottom:pxToRem(10px) solid #f5f5f5;
+		position:relative;
 		h4{
-			
+			height:pxToRem(40px);
+			line-height:pxToRem(40px);
+			padding-left:$homeBlank;
+			background:#fff;
+			color:#666;
+			font-size:14px;
 		}
 		ul{
 			width:pxToRem(85*20px);
 			height:pxToRem(151px);
+			position:absolute;
 			li{
 				float:left;
 				margin-left:13px;
@@ -39,7 +46,7 @@
 					position:absolute;
 					z-index:2;
 					bottom:pxToRem(38px);
-					left:pxToRem(2px);
+					left:pxToRem(3px);
 				}
 				p.second{
 					font-size:13px;
@@ -51,6 +58,82 @@
 				p.third{
 					font-size:12px;
 					color:#999;
+				}
+			}
+		}
+	}
+	
+	#vertical{
+		article{
+			width:100%;
+			height:1.1rem;
+			overflow:hidden;
+			font-size:13px;
+			color:#666;
+			img{
+				float:left;
+				width:pxToRem(65px);
+				padding:pxToRem(10px);
+				padding-left:pxToRem($homeBlank);
+			}
+			aside{
+				float:left;
+				width:2.55rem;
+				height:0.88rem;
+				padding:pxToRem(10px);
+				padding-left:0px;
+				padding-right:pxToRem($homeBlank);
+				border-bottom:1px solid #ccc;
+				position:relative;
+				b{
+					color:#faaf00;
+					font-size:15px;
+				}
+				p{
+					width:75%;
+					height:pxToRem(20px);
+					line-height:pxToRem(20px);
+					white-space:nowrap;
+					overflow:hidden;
+					text-overflow:ellipsis;
+				}
+				h3{
+					font-size:17px;
+					margin-bottom:pxToRem(6px);
+					color:#000;
+					#imax{
+						margin-left:5px;
+						i{
+							font-style:normal;
+							font-size:12px;
+							border:1px solid #3c9fe6;
+						}
+						i:nth-child(1){
+							background:#3c9fe6;
+							color:#fff;
+						}
+						i:nth-child(2){
+							background:#fff;
+							color:#3c9fe6;
+						}
+					}
+				}
+				div{
+					position:absolute;
+					right:10px;
+					top:40px;
+					width:pxToRem(40px);
+					height:pxToRem(25px);
+					line-height:pxToRem(25px);
+					text-align:center;
+					border-radius:5px;
+					color:#fff;
+				}
+				div#goupiao{
+					background:#3c9fe6;
+				}
+				div#yushou{
+					background:#faaf00;
 				}
 			}
 		}

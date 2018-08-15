@@ -8,7 +8,7 @@ class Comingsoon extends Component{
 		return <div id="coming">
 			<div id="scroll">
 				<h4>近期最受期待</h4>
-				<ul onTouchStart={this.handleTouch.bind(this)}>
+				<ul id="horizontal" onTouchStart={this.handleTouch.bind(this)}>
 					{
 						this.props.swipelist.map((item)=>
 							<li key={item.id}>
@@ -22,39 +22,92 @@ class Comingsoon extends Component{
 					}
 				</ul>
 			</div>
+
+			<div id="vertical">
+				{
+					this.props.cominglist.map(item=>
+						<article key={item.id}>
+							<img src={item.img.replace('w.h','128.180')} alt=""/>
+							<aside>
+								<h3>{item.nm}
+									{
+										item.version!==''?
+										<span id="imax">
+											{
+												item.version.split(' ')[0]?
+												<i>{item.version.split(' ')[0].slice(1).toUpperCase()}</i>
+												:null
+											}
+											{
+												item.version.split(' ')[1]?
+												<i>{item.version.split(' ')[1].toUpperCase()}</i>
+												:null
+											}
+										</span>
+										:null
+									}
+								</h3>
+								<p>
+									{
+										item.sc!==0?
+										<span>点映评<b>{item.sc}</b></span>
+										:<span><b>{item.wish}</b>人想看</span>
+									}
+								</p>
+								<p>主演：{item.star}</p>
+								<p>{item.rt}上映</p>
+								{
+									item.showst===4?
+									<div id="goupiao">预售</div>
+									:<div id="yushou">想看</div>
+								}
+							</aside>
+						</article>
+					)
+				}
+			</div>
 		</div>
 	}
 
 	handleTouch(){
-		console.log(this);
+		var self=this;
+		window.ontouchstart=function(e){
+			// console.log("start");
+			var ul=document.querySelector('#horizontal');
+			var count=self.props.swipelist.length;
+			ul.style.width=98*count/100+'rem';
+			var downX=e.changedTouches['0'].clientX;
+			var downLeft=ul.offsetLeft;
 
-		// var ul=document.querySelector('ul');
-		// var count=this.props.swipelist.length;
-		// ul.style.width=98*count/100+'rem';
-		// var downX=e.changedTouches['0'].clientX;
-		// var downLeft=small.offsetLeft;
-		
-		// window.ontouchmove=function(e){
-		// 	var diffX=e.changedTouches['0'].clientX-downX;
-		// 	var realLeft=small.offsetLeft;
-		// 	var max=-(120*count-window.screen.width*2.4);
+			window.ontouchmove=function(e){
+				// console.log("move");
+				var diffX=e.changedTouches['0'].clientX-downX;
+				var realLeft=ul.offsetLeft;
+				var max=-(98*count-window.screen.width);
 
-		// 	if(small!==null){
-		// 		if(realLeft>=0 && diffX>0){
-		// 			small.style.left = '0px';
-		// 		}else if(realLeft<max){
-		// 			small.style.left = max+'px';
-		// 		}else{
-		// 			small.style.left = downLeft + diffX + 'px';
-		// 		}
-		// 	}
-			
-		// }
+				if(ul!==null){
+					if(realLeft>=0 && diffX>0){
+						ul.style.left = '0px';
+					}else if(realLeft<=max){
+						if(realLeft===max && diffX>0){
+							ul.style.left = downLeft + diffX + 'px';
+						}else{
+							ul.style.left = max+'px';
+							window.ontouchmove = null;
+						}
+					}else{
+						ul.style.left = downLeft + diffX + 'px';
+					}
+				}
+			}
 
-		// window.ontouchend = function (e) {
-		// 	window.ontouchmove = null;
-		// 	window.ontouchend = null;
-		// }
+			window.ontouchend = function (e) {
+				// console.log("end");
+				window.ontouchstart=null;
+				window.ontouchmove = null;
+				window.ontouchend = null;
+			}
+		}
 	}
 
 	componentDidMount(){
