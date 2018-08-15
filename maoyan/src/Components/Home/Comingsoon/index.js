@@ -132,7 +132,40 @@ export default connect(
 	{
 		comingRequest(){
 			return axios.get("/ajax/comingList?ci=65&token=&limit=10").then(res=>{
-				console.log("coming",res.data.coming);
+				// console.log("coming",res.data.coming);
+
+				/*
+				//按日期分类显示核心代码
+				//同一个日期的影片只保留第一个的日期
+				//其他的影片日期设置为空(comingTitle属性)
+				//渲染时判断是否为空，为空则不渲染
+
+				var list=res.data.coming;
+				var title='';
+				var arr=[];
+				
+				//遍历出同一日期所有影片中，第一个影片的索引
+				list.map((item,index)=>{
+					if(item.comingTitle!==title){
+						arr.push(index);
+						title=list[index].comingTitle;
+					}
+					return null;
+				});
+
+				//将同一日期中除第一个影片外的所有影片日期设置为空
+				for(var i=0;i<list.length;i++){
+					if(arr.indexOf(i)===-1){
+						list[i].comingTitle='';
+					}
+				}
+
+				return {
+					type:'cominglist',
+					payload:list
+				}
+				*/
+
 				return {
 					type:'cominglist',
 					payload:res.data.coming
@@ -142,7 +175,7 @@ export default connect(
 
 		swipeRequest(){
 			return axios.get("/ajax/mostExpected?ci=65&limit=10&offset=0&token=").then(res=>{
-				console.log("swipe",res.data.coming);
+				// console.log("swipe",res.data.coming);
 				return {
 					type:'swipelist',
 					payload:res.data.coming
