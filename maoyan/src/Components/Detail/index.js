@@ -46,11 +46,13 @@ class Detail extends Component{
 			this.setState({
 				data:res.data.detailMovie
 			});
+
+			this.props.setTitle(res.data.detailMovie.nm);
 		});
 	}
 }
 
-export default (
+export default connect(
 	null,
 	{
 		setTitle(data){

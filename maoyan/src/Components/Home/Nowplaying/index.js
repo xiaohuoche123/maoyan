@@ -80,6 +80,14 @@ export default connect(
 					});
 				});
 			}
+		},
+		setBackTitle(){
+			return (dispath)=>{
+				dispath({
+					type:'setTitle',
+					payload:'猫眼电影'
+				});
+			}
 		}
 	}
 )(Nowplaying);

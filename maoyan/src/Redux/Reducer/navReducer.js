@@ -1,9 +1,9 @@
-const navReducer=(prevState,action)=>{
+const navReducer=(prevState="猫眼电影",action={})=>{
 
 	let {type,payload}=action;
 
 	switch(type){
-		case "":
+		case "setTitle":
 			return payload;
 		default:
 			return prevState;
