@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './index.css';
 import axios from 'axios';
 import path from '../../static/bg.png';
+import {connect} from 'react-redux';
 
 class Detail extends Component{
 	constructor(){
@@ -49,4 +50,16 @@ class Detail extends Component{
 	}
 }
 
-export default Detail;
+export default (
+	null,
+	{
+		setTitle(data){
+			return (dispatch)=>{
+				dispatch({
+					type:'setTitle',
+					payload:data
+				});
+			}
+		}
+	}
+)(Detail);
