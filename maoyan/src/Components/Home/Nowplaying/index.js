@@ -58,6 +58,8 @@ class Nowplaying extends Component{
 		if(this.props.nowList.length===0){
 			this.props.firstRequestData();
 		}
+		
+		this.props.setBackTitle();
 	}
 }
 
